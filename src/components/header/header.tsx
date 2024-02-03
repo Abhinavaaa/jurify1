@@ -1,51 +1,46 @@
 import classNames from 'classnames';
 import styles from './header.module.scss';
-import { Link } from 'react-router-dom';
-import { Dropdown, Button } from 'semantic-ui-react';
+import { useState } from 'react';
 
 export interface HeaderProps {
     className?: string;
 }
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
+// ... (other imports)
 
 export const Header = ({ className }: HeaderProps) => {
-    return (
-        <div className={classNames(styles.root, className)}>
-            <span>Jurify </span>
-            <nav className={styles.nav}>
-                <a href="/features" className={styles.active}>
-                    Features
-                </a>
-                <a href="/pricing" className={styles.active}>
-                    Pricing
-                </a>
-                <Dropdown text="Resources" className={styles.active}>
-                    <Dropdown.Menu>
-                        <Dropdown.Item text="New" />
-                        <Dropdown.Item text="Open..." description="ctrl + o" />
-                        <Dropdown.Item text="Save as..." description="ctrl + s" />
-                        <Dropdown.Item text="Rename" description="ctrl + r" />
-                        <Dropdown.Item text="Make a copy" />
-                        <Dropdown.Item icon="folder" text="Move to folder" />
-                        <Dropdown.Item icon="trash" text="Move to trash" />
-                        <Dropdown.Divider />
-                        <Dropdown.Item text="Download As..." />
-                        <Dropdown.Item text="Publish To Web" />
-                        <Dropdown.Item text="E-mail Collaborators" />
-                    </Dropdown.Menu>
-                </Dropdown>
-                <a href="/contact" className={styles.active}>
-                    Contact Us
-                </a>
-            </nav>
-            <div className={styles.buttondiv}>
-                <Button primary>Login </Button>
-                <Button primary>Try for free </Button>
-            </div>
-        </div>
-    );
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  return (
+    <div className={classNames(styles.root, className)}>
+      <span>Jurify </span>
+      <nav className={classNames(styles.nav, { [styles.mobileMenuOpen]: isMobileMenuOpen })}>
+        <a href="/features" className={styles.active}>
+          Features
+        </a>
+        <a href="/pricing" className={styles.active}>
+          Pricing
+        </a>
+        <a href="/contact" className={styles.active}>
+          Resources{' '}
+        </a>
+        <a href="/contact" className={styles.active}>
+          Contact Us
+        </a>
+      </nav>
+      <div className={styles.buttondiv}>
+        <button className={styles.secondarybtn}>Login </button>
+        <button className={styles.pributton}>Try for free</button>
+      </div>
+      <button className={styles.menuIcon} onClick={handleMenuClick}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+    </div>
+  );
 };
