@@ -13,15 +13,55 @@
     @media only screen and (max-width: $mobile-width) {
         padding: 0 3em
     }
+
+    flex-wrap:nowrap;
+    align-content:space-between;
+    justify-items:stretch;
+    background-color:#4514AC;
+    background-image:linear-gradient(#3B0B9E, #3B0B9E);
+    background-position:0%;
+    background-size:auto;
+    background-repeat:repeat;
+    background-attachment:scroll;
+    background-origin:padding-box;
+    background-clip:border-box;
+    color: $white;
+    position:relative;
 }
 
 .menu {
     display: flex;
     column-gap: 2rem;
     font: $button-font;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 }
 
 .active {
-    color: $black;
+    color: $white;
     font-weight: 600;
 }
+
+.nav {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    flex-direction: row;
+    gap: 16px;
+    position: absolute;
+    left: 35%;
+}
+
+.secondarybtn {
+    color: $black;
+    font-style: normal;
+    position: relative;
+}
+
+.buttondiv {}

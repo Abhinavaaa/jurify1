@@ -12,6 +12,9 @@
   "safeRender": {
     "maxInstancesPerComponent": 1000
   },
+  "addPanel": {
+    "assets": ["@codux-boards/react-semantic"]
+  },
   "scripts": {
     "install": {
       "title": "Install",
