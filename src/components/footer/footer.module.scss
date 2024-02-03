@@ -2,28 +2,49 @@
 
 .root {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-right: 3.5em;
-    padding-left: 3em;
-    padding-top: 2em;
-    padding-bottom: 1.2em;
+    justify-content: space-evenly;
+    width: auto;
+    flex-direction: row;
+    padding: 2em;
+    gap: 72px;
+    background-color: #F0F0F0;
+    background-image: linear-gradient(F0F0F0, F0F0F0);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    color: $black;
+    font-weight: 600;
+    justify-items: center;
+    font-size: 18px;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
 
 .social {
     display: flex;
     height: 30px;
     column-gap: 0.8em;
+    padding: 2px;
 }
 
 .small {
     font: $small-font;
-    margin-top: 18px;
+    margin-top: 4px;
+    width: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
+    color: $charcoal-black;
 }
 
 @media only screen and (max-width: $mobile-width) {
@@ -31,4 +52,86 @@
         flex-direction: column;
         row-gap: 24px;
     }
+}
+
+.footersec {
+    display: flex;
+    flex-direction: row;
+    gap: 96px;
+    align-items: baseline;
+    padding: 16px;
+    margin: 2px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+
+    @media only screen and (max-width: 800px) {
+        gap: 24px; // Adjust the gap for mobile devices
+        padding: 8px; // Adjust the padding for mobile devices
+        justify-content: center; // Center the items for mobile devices
+    }
+}
+
+.footerminisec {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    align-items: center;
+    gap: 8px;
+    margin: 2px;
+    align-content: center;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 28px;
+    margin: 2px;
+    gap: 16px;
+    padding: 16px;
+    color: $black;
+    flex-wrap: wrap;
+
+    &:hover {
+        color: $black;
+    }
+}
+
+.headings {
+    font-size: 18px;
+}
+
+.link {
+    font-family: Arial, sans-serif;
+    color: $charcoal-black;
+    font-weight: 100;
+    font-size: 14px;
+
+    &:hover {
+        color: #0C0C0C;
+        box-shadow: 1.41px 1.41px 2px rgba(0, 0, 0, 0);
+        cursor: initial;
+        opacity: 1;
+    }
+
+    opacity:0.6;
+}
+
+// ... (your existing styles)
+
+@media only screen and (max-width: 650px) {
+    .footerminisec {
+        width: 100%; // Set the width to 100% for smaller screens
+        text-align: center; // Center the content
+        margin-bottom: 8px; // Add some spacing between sections
+    }
+
+    .footersec {
+        gap: 24px; // Adjust the gap between sections for smaller screens
+    }
+}
+
+.para {
+    font-weight: 500;
+    opacity: 0.6;
+    font-family: Arial, sans-serif;
 }

@@ -9,4 +9,9 @@ export default createBoard({
         </div>
     ),
     isSnippet: true,
+    environmentProps: {
+        windowWidth: 1060,
+        windowHeight: 844,
+    },
 });
+100;

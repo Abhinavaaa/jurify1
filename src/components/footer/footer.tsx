@@ -1,54 +1,73 @@
+// Footer.jsx
+import React from 'react';
 import classNames from 'classnames';
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'; // Import social icons
 import styles from './footer.module.scss';
-import { ReactComponent as FacebookIcon } from '../../assets/facebook.svg';
-import { ReactComponent as TwitterxIcon } from '../../assets/twitterx.svg';
-import { ReactComponent as DiscordIcon } from '../../assets/discord.svg';
-import { ReactComponent as YoutubeIcon } from '../../assets/youtube.svg';
-import { ReactComponent as MediumIcon } from '../../assets/medium.svg';
-import { ReactComponent as GithubIcon } from '../../assets/github.svg';
 
 export interface FooterProps {
     className?: string;
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
 export const Footer = ({ className }: FooterProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.details}>
-                <div>Contact Jane Doe</div>
+            <div className={classNames(styles.footerminisec, styles.logo)}>
+                <a href="/" className={styles.logo}>
+                    Jurify
+                </a>
                 <div className={styles.small}>
-                    Mail: info@mysite.com
-                    <br />
-                    Tel: 123-456-7890
-                    <br />
-                    500 Terry Francine Street,
-                    <br />
-                    San Francisco, CA 94158
+                    <div className={styles.small}>&copy;{new Date().getFullYear()}Jurify.</div>
+                    <text>All Rights Reserved.</text>
                 </div>
             </div>
-            <div className={styles.social}>
-                <a href="/">
-                    <TwitterxIcon className={styles.icon} />
-                </a>
-                <a href="/">
-                    <FacebookIcon className={styles.icon} />
-                </a>
-                <a href="/">
-                    <DiscordIcon className={styles.icon} />
-                </a>
-                <a href="/">
-                    <YoutubeIcon className={styles.icon} />
-                </a>
-                <a href="/">
-                    <MediumIcon className={styles.icon} />
-                </a>
-                <a href="/">
-                    <GithubIcon className={styles.icon} />
-                </a>
+            <div className={styles.footersec}>
+                <div className={styles.footerminisec}>
+                    <label className={styles.headings}>Company</label>
+                    <a href="/" className={styles.link}>
+                        About
+                    </a>
+                    <a href="/" className={styles.link}>
+                        Careers
+                    </a>
+                    <a href="/" className={styles.link}>
+                        Contact Us
+                    </a>
+                </div>
+                <div className={styles.footerminisec}>
+                    <label className={styles.headings}>Product</label>
+                    <a href="/" className={styles.link}>
+                        Pricing
+                    </a>
+                    <a href="/" className={styles.link}>
+                        Security
+                    </a>
+                    <a href="/" className={styles.link}>
+                        Resources
+                    </a>
+                    <a href="/" className={styles.link}>
+                        FAQ
+                    </a>
+                </div>
+                <div className={styles.footerminisec}>
+                    <a href="/" className={styles.link}>
+                        Privacy policy
+                    </a>
+                    <a href="/" className={styles.link}>
+                        Terms of Use
+                    </a>
+                    <div className={styles.para}>Follow Us</div>
+                    <div className={styles.social}>
+                        <a href="/">
+                            <FaFacebook className={styles.icon} />
+                        </a>
+                        <a href="/">
+                            <FaInstagram className={styles.icon} />
+                        </a>
+                        <a href="/">
+                            <FaTwitter className={styles.icon} />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     );

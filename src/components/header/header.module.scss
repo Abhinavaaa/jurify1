@@ -4,16 +4,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4em;
     font: $button-font;
     padding: 0 3em; // Adjust padding
 
-    @media only screen and (max-width: $mobile-width) {
+    @media only screen and (max-width: 720px) {
         padding: 1em;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    background-color: #4514AC;
-    background-image: linear-gradient(#3B0B9E, #3B0B9E);
+    background-color: #000080;
     background-position: 0%;
     background-size: auto;
     background-repeat: repeat;
@@ -22,7 +25,10 @@
     background-clip: border-box;
     color: $white;
     position: relative;
-    flex-direction:row;
+    flex-direction: row; // Ensure elements are in a row
+    width: auto;
+    height: 100px;
+    align-content:center;
 }
 
 .menu {
@@ -44,13 +50,12 @@
     width: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; // Center the items
-    gap: 16px;
+    justify-content: space-between; // Center the items
+    gap: 50px;
     position: absolute;
-    left: 50%;
     transform: translateX(-50%); // Center the nav horizontally // Adjust the top position
 
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 920px) {
         display: none; // Hide the nav on mobile
         position: fixed;
         top: 4em;
@@ -62,44 +67,81 @@
         padding: 1em 0;
     }
 
-    flex-direction:row;
+    flex-direction: row; // Ensure elements are in a row
+    padding: 8px;
+    left: 40%;
+    align-content:center;
+    align-items:center;
 }
 
 .secondarybtn {
-    color: $charcoal-black;
+    color: $white;
     font-style: normal;
     position: relative;
-    background-color: #696349;
-    background-image: linear-gradient(#F4C504, #F4C504);
+    background-color: rgba(255, 255, 255, 0);
+    background-image: none;
     background-position: 0%;
     background-size: auto;
     background-repeat: repeat;
     background-attachment: scroll;
     background-origin: padding-box;
     background-clip: border-box;
-    border: 0px solid black;
-    padding: 4px 8px;
+    border: 1px solid;
+    padding: 4px 16px;
     margin: 4px;
-    border-radius: 4px;
+    border-radius: 8px;
+    /* Add rounded corners */
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-image: linear-gradient(90deg, #dec489 0%, #f6e084 23%, #d1b372 50%, #e3cc97 76%, #bf9a53 100%) 1 / 3px stretch;
+    border-width: 5px;
+    border-radius: px;
+    z-index: 1;
+    /* Ensure the button is above other elements */
+    pointer-events: auto;
+    /* Ensure pointer events are enabled */
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0);
+        /* Fully transparent initially */
+        transform: skewX(-45deg);
+        border-radius: 8px;
+        /* Adjust the border-radius to match the main container */
+        transition: background 0.5s ease-in-out;
+        /* Add a transition for smoother effect */
+    }
+
+    &:hover {
+        &:before {
+            background: rgba(255, 255, 255, 0.5);
+            /* Adjust the color and opacity on hover */
+        }
+    }
 }
 
 .buttondiv {
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 920px) {
         display: none; // Hide the buttons on mobile
     }
 
-    font-family:Arial,
+    font-family: Arial,
     sans-serif;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:center;
-    align-content:space-between;
-    gap:4px;
-    margin:2px;
-    padding:4px;
+    display: flex; // Ensure elements are in a row
+    flex-direction: row; // Ensure elements are in a row
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    gap: 4px;
+    margin: 2px;
+    padding: 4px;
 }
-
 
 .pributton {
     padding-top: 4px;
@@ -107,37 +149,190 @@
     padding-bottom: 4px;
     padding-left: 8px;
     margin: 2px;
-    background-color: #DEB714;
-    color: $charcoal-black;
+    background-color: unset;
+    color: $navy-blue;
+    background-image: linear-gradient(90deg, unset 5%, unset 100%);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-image: linear-gradient(90deg, unset 10%, unset 100%);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-image: linear-gradient(90deg, unset 13%, unset 100%);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-image: none;
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 .menuIcon {
     display: none; // Initially hide the menu icon
 
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 920px) {
         display: block; // Display the menu icon on mobile
         position: absolute;
-        top: 1em;
         right: 1em;
         cursor: pointer;
         color: $white;
     }
 
-    padding:8px;
-    outline:4px;
-    border-radius:4px;
-    border:1px solid $white;
+    padding: 12px;
+    outline: 4px;
+    border-radius: 4px;
+    border: 1px solid $white;
+
+    &.arrowAnimation {
+        animation: arrowDown 0.5s forwards;
+    }
+
+    @keyframes arrowDown {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(180deg);
+        }
+    }
+
+    right:2em;
+    top:3em;
 }
 
 .mobileMenuOpen {
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 920px) {
         display: flex; // Show the mobile menu when open
         position: absolute; // Use absolute positioning
-        top: 4em; // Adjust the top position as needed
+        top: 7em; // Adjust the top position as needed
         left: 50%; // Center horizontally
         transform: translateX(-50%); // Center horizontally
         flex-direction: column;
         align-items: center;
         padding: 1em 0;
+        background-color: $navy-blue;
+    }
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 22px;
+    padding: 4px;
+    color: $white;
+
+    &:hover {
+        color: $white;
+        opacity: 1;
+    }
+}
+
+.navitems {
+    font-weight: 600;
+    padding: 2px;
+}
+
+.login {
+    background-image: linear-gradient(90deg, unset 0%, unset 100%);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+}
+
+.goldgrad {
+    background-image: linear-gradient(90deg, #DEC489 0%, #F6E084 25%, #D1B372 51%, #E3CC97 75%, #BF9A53 100%);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: linear-gradient(9deg, #DEC489 0%, #F6E084 25%, #D1B372 51%, #E3CC97 75%, #BF9A53 100%);
+    border: 0px solid white;
+    width: auto;
+    height: auto;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: $white;
+    border-radius: 8px; // Add rounded corners
+    padding: 8px 12px;
+
+    &:hover {
+        background-color: white;
+        color: $navy-blue;
+        outline: auto;
+        outline-width: 0.5px;
+    }
+}
+.dropdownContainer {
+    position: relative;
+
+    &:hover, &:focus-within {
+        .dropdownMenu {
+            display: block;
+            opacity: 1; // Fade in when displayed
+        }
+    }
+
+    .dropdownMenu {
+        opacity: 0; // Start with 0 opacity
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        outline: auto;
+        outline-width: 0.5px;
+        color: $navy-blue;
+        border-radius: 8px; // Add rounded corners
+        width: 200px;
+        min-height: 150px;
+        padding: 10px;
+        margin-top: 8px;
+        transition: opacity 1s ease-in-out; // 1-second fade-in and fade-out duration
+
+        li {
+            display: block;
+            margin-bottom: 8px; // Adjust the vertical spacing
+
+            a {
+                padding: 8px;
+                color: $navy-blue;
+                display: block;
+                border-radius: 8px; // Add rounded corners
+
+                &:hover {
+                    background-color: #f0f0f0;
+                    outline: none;
+                }
+            }
+        }
     }
 }
