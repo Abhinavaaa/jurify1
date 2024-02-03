@@ -1,7 +1,6 @@
 import { createBoard } from '@wixc3/react-board';
-import { Footer } from '../../components/footer/footer';
-import { ComponentWrapper } from '../board-wrappers/component-wrapper';
-import { Header } from '../../components/header/header';
+import { Footer } from '../../../components/footer/footer';
+import { Header } from '../../../components/header/header';
 
 export default createBoard({
     name: 'App',
